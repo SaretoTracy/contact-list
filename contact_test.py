@@ -9,9 +9,13 @@ class TestContact(unittest.TestCase): #subclass class that inherits from unittes
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
-    # Items up here .......
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Contact.contact_list = []
 
-    def setUp(self):
+    def setUp(self): #first test
         '''
         Set up method to run before each test cases.
         '''
@@ -28,13 +32,24 @@ class TestContact(unittest.TestCase): #subclass class that inherits from unittes
         self.assertEqual(self.new_contact.phone_number,"0712345678")
         self.assertEqual(self.new_contact.email,"james@ms.com")
 
-    def test_save_contact(self):
+    def test_save_contact(self): #second test
         '''
         test_save_contact test case to test if the contact object is saved into
          the contact list
         '''
         self.new_contact.save_contact() # saving the new contact
         self.assertEqual(len(Contact.contact_list),1)
+
+
+    def test_save_multiple_contact(self): #third test
+            '''
+            test_save_multiple_contact to check if we can save multiple contact
+            objects to our contact_list
+            '''
+            self.new_contact.save_contact()
+            test_contact = Contact("Test","user","0712345678","test@user.com") # new contact
+            test_contact.save_contact()
+            self.assertEqual(len(Contact.contact_list),2)
 
 if __name__ ==  '__main__':
     unittest.main()

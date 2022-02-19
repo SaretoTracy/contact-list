@@ -85,7 +85,7 @@ class TestContact(unittest.TestCase): #subclass class that inherits from unittes
 
         contact_exists = Contact.contact_exist("0711223344")
 
-        self.assertTrue(contact_exists)
+        self.assertTrue(contact_exists) 
     
 
 if __name__ ==  '__main__':

@@ -1,5 +1,5 @@
 import unittest # Importing the unittest module
-import pyperclip
+import pyperclip #importing pyperclip
 from contact import Contact # Importing the contact class
 
 class TestContact(unittest.TestCase): #subclass class that inherits from unittest.TestCase

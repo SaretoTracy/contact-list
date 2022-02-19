@@ -62,5 +62,7 @@ class TestContact(unittest.TestCase): #subclass class that inherits from unittes
             self.new_contact.delete_contact()# Deleting a contact object
             self.assertEqual(len(Contact.contact_list),1)
 
+    
+
 if __name__ ==  '__main__':
     unittest.main()

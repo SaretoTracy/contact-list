@@ -4,7 +4,7 @@ class Contact:
     """
 
     contact_list = [] # Empty contact list
- # Init method up here
+ 
     def save_contact(self):
 
         '''
@@ -12,6 +12,14 @@ class Contact:
         '''
 
         Contact.contact_list.append(self)
+
+    def delete_contact(self):
+
+        '''
+        delete_contact method deletes a saved contact from the contact_list
+        '''
+
+        Contact.contact_list.remove(self)
     def __init__(self,first_name,last_name,number,email):
 
       # docstring removed for simplicity
